@@ -3,17 +3,10 @@
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
 import { Icon } from "@iconify/react";
 // import AnimatedTooltipDemo from "@/components/animated-tooltip-demo";
+import GlowingEffectFeatures from "@/components/glowing-effect-features";
 import { Logo } from "@/components/Logo";
 
 export default function Home() {
@@ -203,183 +196,15 @@ export default function Home() {
       >
         <div className="container mx-auto max-w-7xl">
           <div className="text-center mb-12 md:mb-16 lg:mb-20">
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 dark:text-neutral-100 mb-4 md:mb-6">
+            <h2 className="text-3xl md:text-4xl lg:text-6xl font-bold text-slate-900 dark:text-neutral-100 mb-4 md:mb-6">
               强大的功能特色
             </h2>
             <p className="text-lg md:text-xl lg:text-2xl text-slate-600 dark:text-neutral-300 max-w-3xl mx-auto leading-relaxed">
-              比Context7更灵活，比Deepwiki更便捷，专为AI编程场景优化
+              比 Context7 更灵活，比 Deepwiki 更便捷，专为 AI 编程场景优化
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
-            {/* Feature 1: Element Selection */}
-            <Card className="group hover:shadow-xl transition-all duration-300 border border-slate-200/60 dark:border-neutral-700/60 hover:border-slate-300 dark:hover:border-neutral-600 bg-white/80 dark:bg-neutral-900/80 backdrop-blur-sm">
-              <CardHeader className="pb-4">
-                <div className="w-14 h-14 bg-gradient-to-br from-blue-50 to-blue-100 dark:from-blue-900/20 dark:to-blue-800/20 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
-                  <svg
-                    className="w-7 h-7 text-blue-600 dark:text-blue-400"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M15 15l-2 5L9 9l11 4-5 2zm0 0l5 5M7.188 2.239l.777 2.897M5.136 7.965l-2.898-.777M13.95 4.05l-2.122 2.122m-5.657 5.656l-2.12 2.122"
-                    />
-                  </svg>
-                </div>
-                <CardTitle className="text-lg font-semibold">
-                  选取元素复制
-                </CardTitle>
-                <CardDescription className="text-sm text-slate-600 dark:text-neutral-400 leading-relaxed">
-                  点击页面上的任何元素，一键转换为 Markdown 格式
-                </CardDescription>
-              </CardHeader>
-              <CardContent className="pt-0">
-                <div className="space-y-3">
-                  <Badge
-                    variant="secondary"
-                    className="bg-blue-50 dark:bg-blue-900/20 text-blue-700 dark:text-blue-300 border-blue-200 dark:border-blue-800"
-                  >
-                    Alt + P
-                  </Badge>
-                  <p className="text-sm text-slate-600 dark:text-neutral-400 leading-relaxed">
-                    支持表格、列表、图片、链接等各种HTML元素的智能转换
-                  </p>
-                </div>
-              </CardContent>
-            </Card>
-
-            {/* Feature 2: Text Selection */}
-            <Card className="group hover:shadow-xl transition-all duration-300 border border-slate-200/60 dark:border-neutral-700/60 hover:border-slate-300 dark:hover:border-neutral-600 bg-white/80 dark:bg-neutral-900/80 backdrop-blur-sm">
-              <CardHeader className="pb-4">
-                <div className="w-14 h-14 bg-gradient-to-br from-green-50 to-green-100 dark:from-green-900/20 dark:to-green-800/20 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
-                  <svg
-                    className="w-7 h-7 text-green-600 dark:text-green-400"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
-                    />
-                  </svg>
-                </div>
-                <CardTitle className="text-lg font-semibold">
-                  划选文本复制
-                </CardTitle>
-                <CardDescription className="text-sm text-slate-600 dark:text-neutral-400 leading-relaxed">
-                  选中任何文本内容，保持格式转换为 Markdown
-                </CardDescription>
-              </CardHeader>
-              <CardContent className="pt-0">
-                <div className="space-y-3">
-                  <Badge
-                    variant="secondary"
-                    className="bg-green-50 dark:bg-green-900/20 text-green-700 dark:text-green-300 border-green-200 dark:border-green-800"
-                  >
-                    Alt + C
-                  </Badge>
-                  <p className="text-sm text-slate-600 dark:text-neutral-400 leading-relaxed">
-                    保留文本样式、链接和基本格式，完美适配 Markdown 语法
-                  </p>
-                </div>
-              </CardContent>
-            </Card>
-
-            {/* Feature 3: Context Menu & Shortcuts */}
-            <Card className="group hover:shadow-xl transition-all duration-300 border border-slate-200/60 dark:border-neutral-700/60 hover:border-slate-300 dark:hover:border-neutral-600 bg-white/80 dark:bg-neutral-900/80 backdrop-blur-sm">
-              <CardHeader className="pb-4">
-                <div className="w-14 h-14 bg-gradient-to-br from-purple-50 to-purple-100 dark:from-purple-900/20 dark:to-purple-800/20 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
-                  <svg
-                    className="w-7 h-7 text-purple-600 dark:text-purple-400"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 100 4m0-4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 100 4m0-4v2m0-6V4"
-                    />
-                  </svg>
-                </div>
-                <CardTitle className="text-lg font-semibold">
-                  右键菜单 & 快捷键
-                </CardTitle>
-                <CardDescription className="text-sm text-slate-600 dark:text-neutral-400 leading-relaxed">
-                  多种触发方式，符合各种使用习惯
-                </CardDescription>
-              </CardHeader>
-              <CardContent className="pt-0">
-                <div className="space-y-3">
-                  <div className="flex flex-wrap gap-1.5">
-                    <Badge
-                      variant="outline"
-                      className="text-xs bg-purple-50 dark:bg-purple-900/20 text-purple-700 dark:text-purple-300 border-purple-200 dark:border-purple-800"
-                    >
-                      右键菜单
-                    </Badge>
-                    <Badge
-                      variant="outline"
-                      className="text-xs bg-purple-50 dark:bg-purple-900/20 text-purple-700 dark:text-purple-300 border-purple-200 dark:border-purple-800"
-                    >
-                      键盘快捷键
-                    </Badge>
-                  </div>
-                  <p className="text-sm text-slate-600 dark:text-neutral-400 leading-relaxed">
-                    无论是鼠标操作还是键盘操作，都能快速完成复制任务
-                  </p>
-                </div>
-              </CardContent>
-            </Card>
-
-            {/* Feature 4: Tab Management */}
-            <Card className="group hover:shadow-xl transition-all duration-300 border border-slate-200/60 dark:border-neutral-700/60 hover:border-slate-300 dark:hover:border-neutral-600 bg-white/80 dark:bg-neutral-900/80 backdrop-blur-sm">
-              <CardHeader className="pb-4">
-                <div className="w-14 h-14 bg-gradient-to-br from-orange-50 to-orange-100 dark:from-orange-900/20 dark:to-orange-800/20 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
-                  <svg
-                    className="w-7 h-7 text-orange-600 dark:text-orange-400"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M8 7v8a2 2 0 002 2h6M8 7V5a2 2 0 012-2h4.586a1 1 0 01.707.293l4.414 4.414a1 1 0 01.293.707V15a2 2 0 01-2 2v0a2 2 0 01-2-2v-2a2 2 0 00-2-2H8z M8 7H6a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2v-2"
-                    />
-                  </svg>
-                </div>
-                <CardTitle className="text-lg font-semibold">
-                  标签页信息管理
-                </CardTitle>
-                <CardDescription className="text-sm text-slate-600 dark:text-neutral-400 leading-relaxed">
-                  一键复制标签页标题、URL 或 Markdown 链接格式
-                </CardDescription>
-              </CardHeader>
-              <CardContent className="pt-0">
-                <div className="space-y-3">
-                  <Badge
-                    variant="secondary"
-                    className="bg-orange-50 dark:bg-orange-900/20 text-orange-700 dark:text-orange-300 border-orange-200 dark:border-orange-800"
-                  >
-                    Popup 面板
-                  </Badge>
-                  <p className="text-sm text-slate-600 dark:text-neutral-400 leading-relaxed">
-                    支持单个或批量复制标签页信息，完美整理研究资料
-                  </p>
-                </div>
-              </CardContent>
-            </Card>
-          </div>
+          <GlowingEffectFeatures />
         </div>
       </section>
 
