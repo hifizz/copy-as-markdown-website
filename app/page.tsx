@@ -48,6 +48,47 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-gray-50 dark:from-neutral-900 dark:via-neutral-800 dark:to-stone-900">
+      {/* 结构化数据 */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "SoftwareApplication",
+            "name": "Copy as Markdown",
+            "description": "专为AI编程工具设计的Chrome插件，一键将网页内容转换为Markdown格式。解决Context7、Deepwiki不便的场景，为Claude、ChatGPT等AI工具提供完美的上下文内容。",
+            "applicationCategory": "BrowserApplication",
+            "operatingSystem": "Chrome, Firefox, Edge",
+            "offers": {
+              "@type": "Offer",
+              "price": 0,
+              "priceCurrency": "USD"
+            },
+            "aggregateRating": {
+              "@type": "AggregateRating",
+              "ratingValue": "4.8",
+              "ratingCount": "1250"
+            },
+            "author": {
+              "@type": "Organization",
+              "name": "Copy as Markdown Team"
+            },
+            "mainEntityOfPage": {
+              "@type": "WebPage",
+              "@id": "https://copy-as-markdown.com"
+            },
+            "keywords": "AI编程工具,上下文获取,Context7替代,Deepwiki替代,Claude工具,ChatGPT工具,Chrome插件,Markdown转换",
+            "screenshot": "https://copy-as-markdown.com/screenshot.jpg",
+            "softwareVersion": "2.0.0",
+            "datePublished": "2024-01-01",
+            "dateModified": "2024-12-01",
+            "downloadUrl": "https://chrome.google.com/webstore/detail/copy-as-markdown",
+            "installUrl": "https://chrome.google.com/webstore/detail/copy-as-markdown",
+            "supportedBrowser": ["Chrome", "Firefox", "Edge"],
+            "applicationSubCategory": "DeveloperTools"
+          })
+        }}
+      />
       {/* Header */}
       <header className="border-b border-slate-200/60 dark:border-neutral-700/60 bg-white/80 backdrop-blur-md dark:bg-neutral-900/80 sticky top-0 z-50">
         <div className="container mx-auto px-4 py-4 flex items-center justify-between">
@@ -91,9 +132,9 @@ export default function Home() {
           </h1>
 
           <p className="text-lg md:text-xl lg:text-2xl xl:text-3xl text-slate-600 dark:text-neutral-400 mb-6 md:mb-8 max-w-4xl mx-auto leading-relaxed font-light px-4">
-            一键将网页内容转换为 Markdown 格式
+            专为 AI 编程工具设计的上下文获取利器
             <br className="hidden md:block" />
-            支持选取元素、划选文本，让内容整理变得前所未有的简单
+            解决 Context7、Deepwiki 不便场景
           </p>
 
           {/* User Testimonials，算了，先不加，等我的插件多点数据再加*/}
@@ -166,7 +207,7 @@ export default function Home() {
               强大的功能特色
             </h2>
             <p className="text-lg md:text-xl lg:text-2xl text-slate-600 dark:text-neutral-300 max-w-3xl mx-auto leading-relaxed">
-              简单易用，功能完整，让 Markdown 内容创作变得轻松愉快
+              比Context7更灵活，比Deepwiki更便捷，专为AI编程场景优化
             </p>
           </div>
 

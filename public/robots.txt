@@ -1,0 +1,20 @@
+User-agent: *
+Allow: /
+
+# 指向 sitemap
+Sitemap: https://cam.zilin.im/sitemap.xml
+
+# 优化爬虫速度
+Crawl-delay: 1
+
+# 禁止访问不必要的文件
+Disallow: /_next/
+Disallow: /api/
+Disallow: /*.json$
+Disallow: /*.xml$
+Allow: /sitemap.xml
+
+# 主要页面
+Allow: /
+Allow: /#features
+Allow: /#install 
