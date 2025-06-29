@@ -100,7 +100,7 @@ export default function Home() {
               安装
             </a>
             <a
-              href="#legal"
+              href="#about"
               className="text-slate-600 hover:text-slate-900 dark:text-neutral-400 dark:hover:text-neutral-200 transition-colors text-sm"
             >
               关于
