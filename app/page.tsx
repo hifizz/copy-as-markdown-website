@@ -1,28 +1,22 @@
 "use client";
 
-import { useState, useEffect } from "react";
-import Image from "next/image";
+import { useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import { Separator } from "@/components/ui/separator";
 import { Icon } from "@iconify/react";
 // import AnimatedTooltipDemo from "@/components/animated-tooltip-demo";
 import GlowingEffectFeatures from "@/components/glowing-effect-features";
 import { Logo } from "@/components/Logo";
 
 export default function Home() {
-  const [isDarkMode, setIsDarkMode] = useState(false);
-
   useEffect(() => {
     // 检测系统主题偏好
     const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
 
     // 设置初始主题
-    setIsDarkMode(mediaQuery.matches);
     document.documentElement.classList.toggle("dark", mediaQuery.matches);
 
     // 监听系统主题变化
     const handleChange = (e: MediaQueryListEvent) => {
-      setIsDarkMode(e.matches);
       document.documentElement.classList.toggle("dark", e.matches);
     };
 
@@ -48,38 +42,42 @@ export default function Home() {
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "SoftwareApplication",
-            "name": "Copy as Markdown",
-            "description": "专为AI编程工具设计的Chrome插件，一键将网页内容转换为Markdown格式。解决Context7、Deepwiki不便的场景，为Claude、ChatGPT等AI工具提供完美的上下文内容。",
-            "applicationCategory": "BrowserApplication",
-            "operatingSystem": "Chrome, Firefox, Edge",
-            "offers": {
+            name: "Copy as Markdown",
+            description:
+              "专为AI编程工具设计的Chrome插件，一键将网页内容转换为Markdown格式。解决Context7、Deepwiki不便的场景，为Claude、ChatGPT等AI工具提供完美的上下文内容。",
+            applicationCategory: "BrowserApplication",
+            operatingSystem: "Chrome, Firefox, Edge",
+            offers: {
               "@type": "Offer",
-              "price": 0,
-              "priceCurrency": "USD"
+              price: 0,
+              priceCurrency: "USD",
             },
-            "aggregateRating": {
+            aggregateRating: {
               "@type": "AggregateRating",
-              "ratingValue": "4.8",
-              "ratingCount": "1250"
+              ratingValue: "4.8",
+              ratingCount: "1250",
             },
-            "author": {
+            author: {
               "@type": "Organization",
-              "name": "Copy as Markdown Team"
+              name: "Copy as Markdown Team",
             },
-            "mainEntityOfPage": {
+            mainEntityOfPage: {
               "@type": "WebPage",
-              "@id": "https://copy-as-markdown.com"
+              "@id": "https://copy-as-markdown.com",
             },
-            "keywords": "AI编程工具,上下文获取,Context7替代,Deepwiki替代,Claude工具,ChatGPT工具,Chrome插件,Markdown转换",
-            "screenshot": "https://copy-as-markdown.com/screenshot.jpg",
-            "softwareVersion": "2.0.0",
-            "datePublished": "2024-01-01",
-            "dateModified": "2024-12-01",
-            "downloadUrl": "https://chrome.google.com/webstore/detail/copy-as-markdown",
-            "installUrl": "https://chrome.google.com/webstore/detail/copy-as-markdown",
-            "supportedBrowser": ["Chrome", "Firefox", "Edge"],
-            "applicationSubCategory": "DeveloperTools"
-          })
+            keywords:
+              "AI编程工具,上下文获取,Context7替代,Deepwiki替代,Claude工具,ChatGPT工具,Chrome插件,Markdown转换",
+            screenshot: "https://copy-as-markdown.com/screenshot.jpg",
+            softwareVersion: "2.0.0",
+            datePublished: "2024-01-01",
+            dateModified: "2024-12-01",
+            downloadUrl:
+              "https://chrome.google.com/webstore/detail/copy-as-markdown",
+            installUrl:
+              "https://chrome.google.com/webstore/detail/copy-as-markdown",
+            supportedBrowser: ["Chrome", "Firefox", "Edge"],
+            applicationSubCategory: "DeveloperTools",
+          }),
         }}
       />
       {/* Header */}
