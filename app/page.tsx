@@ -13,6 +13,8 @@ import {
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
 import { Icon } from "@iconify/react";
+// import AnimatedTooltipDemo from "@/components/animated-tooltip-demo";
+import { Logo } from "@/components/Logo";
 
 export default function Home() {
   const [isDarkMode, setIsDarkMode] = useState(false);
@@ -42,32 +44,14 @@ export default function Home() {
   const buttonStyleHighlight =
     "dark:bg-neutral-100 dark:hover:bg-white dark:text-neutral-900 text-white dark:hover:text-neutral-900 hover:bg-slate-800";
 
-  const iconStyle ="w-[24px]! h-[24px]! md:w-[32px]! md:h-[32px]! mr-1"
+  const iconStyle = "w-[24px]! h-[24px]! md:w-[32px]! md:h-[32px]! mr-1";
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-gray-50 dark:from-neutral-900 dark:via-neutral-800 dark:to-stone-900">
       {/* Header */}
       <header className="border-b border-slate-200/60 dark:border-neutral-700/60 bg-white/80 backdrop-blur-md dark:bg-neutral-900/80 sticky top-0 z-50">
         <div className="container mx-auto px-4 py-4 flex items-center justify-between">
-          <div className="flex items-center space-x-3">
-            <Image
-              src="/icon/dark_48.png"
-              alt="Copy as Markdown Logo"
-              width={24}
-              height={24}
-              className="dark:hidden"
-            />
-            <Image
-              src="/icon/light_48.png"
-              alt="Copy as Markdown Logo"
-              width={24}
-              height={24}
-              className="hidden dark:block"
-            />
-            <span className="text-sm font-medium text-slate-700 dark:text-neutral-300">
-              Copy as Markdown
-            </span>
-          </div>
+          <Logo />
           <nav className="hidden md:flex items-center space-x-6">
             <a
               href="#features"
@@ -112,41 +96,24 @@ export default function Home() {
             支持选取元素、划选文本，让内容整理变得前所未有的简单
           </p>
 
+          {/* User Testimonials，算了，先不加，等我的插件多点数据再加*/}
+          {/* <AnimatedTooltipDemo /> */}
+
           {/* Install Buttons */}
           <div
             id="install"
-            className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center items-center mb-8 md:mb-20 px-4"
+            className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center items-center mb-8 md:mb-16 px-4"
           >
-            <Button
-              size="lg"
-              className={buttonStyle + buttonStyleHighlight}
-            >
-              <Icon
-                icon="logos:chrome"
-                className={iconStyle}
-              />
+            <Button size="lg" className={buttonStyle + buttonStyleHighlight}>
+              <Icon icon="logos:chrome" className={iconStyle} />
               安装到 Chrome
             </Button>
-            <Button
-              size="lg"
-              variant="outline"
-              className={buttonStyle}
-            >
-              <Icon
-                icon="logos:firefox"
-                className={iconStyle}
-              />
+            <Button size="lg" variant="outline" className={buttonStyle}>
+              <Icon icon="logos:firefox" className={iconStyle} />
               安装到 Firefox
             </Button>
-            <Button
-              size="lg"
-              variant="outline"
-              className={buttonStyle}
-            >
-              <Icon
-                icon="logos:microsoft-edge"
-                className={iconStyle}
-              />
+            <Button size="lg" variant="outline" className={buttonStyle}>
+              <Icon icon="logos:microsoft-edge" className={iconStyle} />
               安装到 Edge
             </Button>
           </div>
@@ -375,9 +342,8 @@ export default function Home() {
         </div>
       </section>
 
-
       {/* Stats & Social Proof */}
-      <section className="py-16 md:py-24 lg:py-32 px-4 bg-slate-50/50 dark:bg-neutral-800/30">
+      {/* <section className="py-16 md:py-24 lg:py-32 px-4 bg-slate-50/50 dark:bg-neutral-800/30">
         <div className="container mx-auto max-w-6xl text-center">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 dark:text-neutral-100 mb-8 md:mb-12 lg:mb-16">
             深受用户喜爱
@@ -410,31 +376,13 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Footer */}
       <footer className="border-t border-slate-200 dark:border-neutral-700 bg-white dark:bg-neutral-900 py-6 px-4">
         <div className="container mx-auto max-w-6xl">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <div className="flex items-center space-x-3">
-              <Image
-                src="/icon/dark_32.png"
-                alt="Copy as Markdown"
-                width={24}
-                height={24}
-                className="dark:hidden"
-              />
-              <Image
-                src="/icon/light_32.png"
-                alt="Copy as Markdown"
-                width={24}
-                height={24}
-                className="hidden dark:block"
-              />
-              <span className="font-medium text-slate-900 dark:text-neutral-100">
-                Copy as Markdown
-              </span>
-            </div>
+            <Logo />
 
             <div className="flex space-x-6 text-sm text-slate-600 dark:text-neutral-400">
               <a
