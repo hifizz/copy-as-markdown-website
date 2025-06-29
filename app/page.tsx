@@ -35,7 +35,7 @@ export default function Home() {
   const buttonStyle =
     "w-full sm:w-auto sm:min-w-[200px] px-6 md:px-8 py-6 md:py-6 text-base md:text-lg border-2 border-slate-300 dark:border-neutral-600 hover:border-slate-600 dark:hover:border-neutral-400 hover:text-slate-900 dark:hover:text-neutral-200 transition-all duration-300 font-medium cursor-pointer";
   const buttonStyleHighlight =
-    "dark:bg-neutral-100 dark:hover:bg-white dark:text-neutral-900 text-white dark:hover:text-neutral-900 hover:bg-slate-800";
+    "dark:bg-neutral-100 dark:hover:bg-white dark:text-neutral-900 text-white dark:hover:text-neutral-900 hover:bg-slate-800 cursor-pointer";
 
   const iconStyle = "w-[24px]! h-[24px]! md:w-[32px]! md:h-[32px]! mr-1";
 
