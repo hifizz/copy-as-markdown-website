@@ -3,21 +3,20 @@ import Image from "next/image";
 export const Logo = () => {
     return (
         <div className="flex items-center space-x-3">
-              <Image
-                src="/icon/dark_32.png"
+              {/* Dark mode logo - using high resolution images */}
+              <img
+                src="/icon/dark_96.png"
                 alt="Copy as Markdown"
-                width={24}
-                height={24}
-                className="dark:hidden"
+                className="dark:hidden w-6 h-6 md:w-8 md:h-8"
+                style={{ imageRendering: 'auto' }}
               />
-              <Image
-                src="/icon/light_32.png"
+              <img
+                src="/icon/light_96.png"
                 alt="Copy as Markdown"
-                width={24}
-                height={24}
-                className="hidden dark:block"
+                className="hidden dark:block w-6 h-6 md:w-8 md:h-8"
+                style={{ imageRendering: 'auto' }}
               />
-              <span className="font-medium text-slate-900 dark:text-neutral-100">
+              <span className="font-medium text-slate-900 dark:text-neutral-100 text-base md:text-lg">
                 Copy as Markdown
               </span>
             </div>
