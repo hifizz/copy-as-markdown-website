@@ -13,27 +13,27 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Copy as Markdown - AI编程工具的最佳上下文获取插件",
-  description: "专为AI编程工具设计的Chrome插件，一键将网页内容转换为Markdown格式。解决Context7、Deepwiki不便的场景，为Claude、ChatGPT等AI工具提供完美的上下文内容。支持选取元素、划选文本，让AI编程更高效。",
+  title: "Copy as Markdown - 精确复制网页内容的Markdown神器",
+  description: "专业的网页内容转Markdown插件，解决Context7和Deepwiki无法处理的精确选择场景。支持选取页面任意部分，完美适配Markdown写作需求。无论是技术文档、博客写作还是内容整理，一键获得高质量Markdown格式。",
   keywords: [
     "Copy as Markdown",
-    "AI编程工具",
-    "cursor 辅助工具",
-    "windsurf 辅助工具",
-    "上下文获取",
-    "Context7辅助",
-    "Deepwiki辅助", 
-    "Claude工具",
-    "ChatGPT工具",
-    "Chrome插件",
-    "Markdown转换",
-    "网页内容提取",
-    "AI助手工具",
-    "编程效率工具"
+    "Markdown转换工具",
+    "网页内容复制",
+    "精确选择复制",
+    "Context7替代",
+    "Deepwiki增强",
+    "Markdown写作工具",
+    "技术文档工具",
+    "博客写作助手",
+    "内容整理工具",
+    "网页转Markdown",
+    "浏览器插件",
+    "文档编写工具",
+    "内容创作工具"
   ],
-  authors: [{ name: "Copy as Markdown Team" }],
-  creator: "Copy as Markdown",
-  publisher: "Copy as Markdown",
+  authors: [{ name: "子林", url: "https://zilin.im" }],
+  creator: "子林",
+  publisher: "子林",
   robots: {
     index: true,
     follow: true,
@@ -50,22 +50,22 @@ export const metadata: Metadata = {
     locale: "zh_CN",
     alternateLocale: ["en_US"],
     url: "https://copy-as-markdown.com",
-    title: "Copy as Markdown - AI编程工具的最佳上下文获取插件",
-    description: "专为AI编程工具设计的Chrome插件，解决Context7、Deepwiki获取上下文不便的问题。一键转换网页内容为Markdown，为Claude、ChatGPT等AI工具提供完美上下文。",
+    title: "Copy as Markdown - 精确复制网页内容的Markdown神器",
+    description: "专业的网页内容转Markdown插件，解决Context7和Deepwiki无法处理的精确选择场景。支持选取页面任意部分，完美适配Markdown写作需求，一键获得高质量格式。",
     siteName: "Copy as Markdown",
     images: [
       {
         url: "/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "Copy as Markdown - AI编程工具上下文获取插件",
+        alt: "Copy as Markdown - 精确复制网页内容的Markdown神器",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Copy as Markdown - AI编程工具上下文获取插件",
-    description: "解决Context7、Deepwiki不便场景，一键为AI编程工具提供完美Markdown上下文",
+    title: "Copy as Markdown - 精确复制网页内容的Markdown神器",
+    description: "专业的网页内容转Markdown插件，解决Context7和Deepwiki无法处理的精确选择场景，完美适配Markdown写作需求",
     images: ["/twitter-image.jpg"],
     creator: "@copyasmarkdown",
   },
@@ -78,6 +78,32 @@ export const metadata: Metadata = {
   },
   category: "Technology",
   classification: "AI Tools, Browser Extensions, Productivity",
+  icons: {
+    icon: [
+      {
+        url: "/icon/dark_128.png",
+        media: "(prefers-color-scheme: light)",
+        sizes: "128x128",
+        type: "image/png",
+      },
+      {
+        url: "/icon/light_128.png", 
+        media: "(prefers-color-scheme: dark)",
+        sizes: "128x128",
+        type: "image/png",
+      },
+    ],
+    shortcut: [
+      {
+        url: "/icon/dark_128.png",
+        media: "(prefers-color-scheme: light)",
+      },
+      {
+        url: "/icon/light_128.png",
+        media: "(prefers-color-scheme: dark)",
+      },
+    ],
+  },
 };
 
 export default function RootLayout({

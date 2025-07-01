@@ -26,10 +26,21 @@ export default function Home() {
     return () => mediaQuery.removeEventListener("change", handleChange);
   }, []);
 
-  const buttonStyle =
-    "w-full sm:w-auto sm:min-w-[200px] px-6 md:px-8 py-6 md:py-6 text-base md:text-lg border-2 border-slate-300 dark:border-neutral-600 hover:border-slate-600 dark:hover:border-neutral-400 hover:text-slate-900 dark:hover:text-neutral-200 transition-all duration-300 font-medium cursor-pointer";
-  const buttonStyleHighlight =
-    "dark:bg-neutral-100 dark:hover:bg-white dark:text-neutral-900 text-white dark:hover:text-neutral-900 hover:bg-slate-800 cursor-pointer";
+  // 基础按钮样式
+  const baseButtonStyle =
+    "w-full sm:w-auto sm:min-w-[200px] px-6 md:px-8 py-6 md:py-6 text-base md:text-lg transition-all duration-300 font-medium cursor-pointer";
+  
+  // Chrome主按钮样式（有背景色）
+  const chromeButtonStyle =
+    baseButtonStyle + 
+    " bg-slate-900 hover:bg-slate-800 text-white hover:text-white border-2 border-slate-900 hover:border-slate-800" +
+    " dark:bg-neutral-100 dark:hover:bg-white dark:text-neutral-900 dark:hover:text-neutral-900 dark:border-neutral-100 dark:hover:border-white";
+  
+  // 其他按钮样式（outline风格）
+  const outlineButtonStyle =
+    baseButtonStyle +
+    " bg-transparent hover:bg-slate-50 text-slate-900 hover:text-slate-900 border-2 border-slate-300 hover:border-slate-400" +
+    " dark:bg-transparent dark:hover:bg-neutral-800/50 dark:text-neutral-100 dark:hover:text-neutral-100 dark:border-neutral-600 dark:hover:border-neutral-500";
 
   const iconStyle = "w-[24px]! h-[24px]! md:w-[32px]! md:h-[32px]! mr-1";
 
@@ -44,7 +55,7 @@ export default function Home() {
             "@type": "SoftwareApplication",
             name: "Copy as Markdown",
             description:
-              "专为AI编程工具设计的Chrome插件，一键将网页内容转换为Markdown格式。解决Context7、Deepwiki不便的场景，为Claude、ChatGPT等AI工具提供完美的上下文内容。",
+              "专业的网页内容转Markdown插件，解决Context7和Deepwiki无法处理的精确选择场景。支持选取页面任意部分，完美适配Markdown写作需求。无论是技术文档、博客写作还是内容整理，一键获得高质量Markdown格式。",
             applicationCategory: "BrowserApplication",
             operatingSystem: "Chrome, Firefox, Edge",
             offers: {
@@ -58,15 +69,16 @@ export default function Home() {
               ratingCount: "1250",
             },
             author: {
-              "@type": "Organization",
-              name: "Copy as Markdown Team",
+              "@type": "Person",
+              name: "子林",
+              url: "https://zilin.im",
             },
             mainEntityOfPage: {
               "@type": "WebPage",
               "@id": "https://copy-as-markdown.com",
             },
             keywords:
-              "AI编程工具,上下文获取,Context7替代,Deepwiki替代,Claude工具,ChatGPT工具,Chrome插件,Markdown转换",
+              "Markdown转换工具,网页内容复制,精确选择复制,Context7替代,Deepwiki增强,Markdown写作工具,技术文档工具,博客写作助手,内容整理工具",
             screenshot: "https://copy-as-markdown.com/screenshot.jpg",
             softwareVersion: "2.0.0",
             datePublished: "2024-01-01",
@@ -123,9 +135,9 @@ export default function Home() {
           </h1>
 
           <p className="text-lg md:text-xl lg:text-2xl xl:text-3xl text-slate-600 dark:text-neutral-400 mb-6 md:mb-8 max-w-4xl mx-auto leading-relaxed font-light px-4">
-            专为 AI 编程工具设计的上下文获取利器
+            精确复制网页任意部分内容
             <br className="hidden md:block" />
-            解决 Context7、Deepwiki 不便场景
+            专为频繁 Markdown 写作场景优化
           </p>
 
           {/* User Testimonials，算了，先不加，等我的插件多点数据再加*/}
@@ -136,15 +148,15 @@ export default function Home() {
             id="install"
             className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center items-center mb-8 md:mb-16 px-4"
           >
-            <Button size="lg" className={buttonStyle + buttonStyleHighlight}>
+            <Button size="lg" className={chromeButtonStyle}>
               <Icon icon="logos:chrome" className={iconStyle} />
               安装到 Chrome
             </Button>
-            <Button size="lg" variant="outline" className={buttonStyle}>
+            <Button size="lg" variant="outline" className={outlineButtonStyle}>
               <Icon icon="logos:firefox" className={iconStyle} />
               安装到 Firefox
             </Button>
-            <Button size="lg" variant="outline" className={buttonStyle}>
+            <Button size="lg" variant="outline" className={outlineButtonStyle}>
               <Icon icon="logos:microsoft-edge" className={iconStyle} />
               安装到 Edge
             </Button>
@@ -198,7 +210,7 @@ export default function Home() {
               强大的功能特色
             </h2>
             <p className="text-lg md:text-xl lg:text-2xl text-slate-600 dark:text-neutral-300 max-w-3xl mx-auto leading-relaxed">
-              比 Context7 更灵活，比 Deepwiki 更便捷，专为 AI 编程场景优化
+              解决 Context7 和 Deepwiki 无法处理的精确选择场景，完美适配 Markdown 写作需求
             </p>
           </div>
 
@@ -206,41 +218,156 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Stats & Social Proof */}
-      {/* <section className="py-16 md:py-24 lg:py-32 px-4 bg-slate-50/50 dark:bg-neutral-800/30">
-        <div className="container mx-auto max-w-6xl text-center">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 dark:text-neutral-100 mb-8 md:mb-12 lg:mb-16">
-            深受用户喜爱
-          </h2>
+      {/* About Section */}
+      <section
+        id="about"
+        className="py-16 md:py-24 lg:py-32 px-4"
+      >
+        <div className="container mx-auto max-w-4xl">
+          <div className="text-center mb-12 md:mb-16">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 dark:text-neutral-100 mb-4 md:mb-6">
+              为什么开发这个插件？
+            </h2>
+            <p className="text-lg md:text-xl text-slate-600 dark:text-neutral-300 max-w-3xl mx-auto leading-relaxed">
+              一个源于真实痛点的解决方案
+            </p>
+          </div>
 
-          <div className="grid md:grid-cols-3 gap-8 md:gap-12">
-            <div className="text-center">
-              <div className="text-4xl md:text-5xl font-bold text-slate-900 dark:text-neutral-100 mb-2">
-                10K+
-              </div>
-              <div className="text-slate-600 dark:text-neutral-300 text-lg font-medium">
-                活跃用户
+          <div className="space-y-8 md:space-y-12 text-left">
+            {/* Problem Statement */}
+            <div className="bg-white dark:bg-neutral-800/50 rounded-2xl p-6 md:p-8 border border-slate-200 dark:border-neutral-700">
+              <h3 className="text-xl md:text-2xl font-semibold text-slate-900 dark:text-neutral-100 mb-4">
+                🤔 遇到的问题
+              </h3>
+              <div className="space-y-4 text-slate-600 dark:text-neutral-300">
+                <p className="leading-relaxed">
+                  作为一个经常需要写技术文档和博客的开发者，我发现现有的工具都有各自的局限性：
+                </p>
+                <ul className="space-y-2 pl-4">
+                  <li className="flex items-start">
+                    <span className="text-red-500 mr-2 mt-1">•</span>
+                    <span><strong>Context7</strong>：只能复制整个页面，无法选择特定区域，经常包含大量无关内容</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-red-500 mr-2 mt-1">•</span>
+                    <span><strong>Deepwiki</strong>：选择功能不够精确，对复杂页面结构支持有限</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-red-500 mr-2 mt-1">•</span>
+                    <span><strong>手动复制粘贴</strong>：格式丢失，需要大量后期调整，效率极低</span>
+                  </li>
+                </ul>
               </div>
             </div>
-            <div className="text-center">
-              <div className="text-4xl md:text-5xl font-bold text-slate-900 dark:text-neutral-100 mb-2">
-                ⭐ 4.8
-              </div>
-              <div className="text-slate-600 dark:text-neutral-300 text-lg font-medium">
-                用户评分
+
+            {/* Solution */}
+            <div className="bg-white dark:bg-neutral-800/50 rounded-2xl p-6 md:p-8 border border-slate-200 dark:border-neutral-700">
+              <h3 className="text-xl md:text-2xl font-semibold text-slate-900 dark:text-neutral-100 mb-4">
+                💡 我们的解决方案
+              </h3>
+              <div className="space-y-4 text-slate-600 dark:text-neutral-300">
+                <p className="leading-relaxed">
+                  Copy as Markdown 专门为频繁的 Markdown 写作场景而设计：
+                </p>
+                                 <ul className="space-y-2 pl-4">
+                   <li className="flex items-start">
+                     <span className="text-green-500 mr-2 mt-1">•</span>
+                     <span><strong>精确选择</strong>：支持选取页面任意部分，甚至是单个段落或表格</span>
+                   </li>
+                   <li className="flex items-start">
+                     <span className="text-green-500 mr-2 mt-1">•</span>
+                     <span><strong>智能识别</strong>：自动识别页面结构，保持内容层次和格式</span>
+                   </li>
+                   <li className="flex items-start">
+                     <span className="text-green-500 mr-2 mt-1">•</span>
+                     <span><strong>可见元素优化</strong>：只复制用户实际可见的元素，过滤隐藏内容和干扰元素</span>
+                   </li>
+                   <li className="flex items-start">
+                     <span className="text-green-500 mr-2 mt-1">•</span>
+                     <span><strong>快速操作</strong>：右键菜单、快捷键、工具栏按钮，多种触发方式</span>
+                   </li>
+                   <li className="flex items-start">
+                     <span className="text-green-500 mr-2 mt-1">•</span>
+                     <span><strong>高质量输出</strong>：生成标准 Markdown 格式，直接可用于文档编写</span>
+                   </li>
+                 </ul>
               </div>
             </div>
-            <div className="text-center">
-              <div className="text-4xl md:text-5xl font-bold text-slate-900 dark:text-neutral-100 mb-2">
-                50K+
+
+            {/* Use Cases */}
+            <div className="bg-white dark:bg-neutral-800/50 rounded-2xl p-6 md:p-8 border border-slate-200 dark:border-neutral-700">
+              <h3 className="text-xl md:text-2xl font-semibold text-slate-900 dark:text-neutral-100 mb-4">
+                🎯 适用场景
+              </h3>
+              <div className="space-y-4 text-slate-600 dark:text-neutral-300">
+                <p className="leading-relaxed">
+                  特别适合以下工作场景：
+                </p>
+                <div className="grid md:grid-cols-2 gap-4">
+                  <div className="space-y-2">
+                    <h4 className="font-medium text-slate-900 dark:text-neutral-100">技术文档编写</h4>
+                    <p className="text-sm">整理技术资料、API 文档、代码示例</p>
+                  </div>
+                  <div className="space-y-2">
+                    <h4 className="font-medium text-slate-900 dark:text-neutral-100">博客内容创作</h4>
+                    <p className="text-sm">收集参考资料、引用文章片段</p>
+                  </div>
+                  <div className="space-y-2">
+                    <h4 className="font-medium text-slate-900 dark:text-neutral-100">学习笔记整理</h4>
+                    <p className="text-sm">保存课程内容、研究资料</p>
+                  </div>
+                  <div className="space-y-2">
+                    <h4 className="font-medium text-slate-900 dark:text-neutral-100">内容策展</h4>
+                    <p className="text-sm">收集整理行业资讯、精选内容</p>
+                  </div>
+                </div>
               </div>
-              <div className="text-slate-600 dark:text-neutral-300 text-lg font-medium">
-                月度复制次数
+            </div>
+
+            {/* Philosophy */}
+            <div className="bg-gradient-to-r from-slate-50 to-gray-50 dark:from-neutral-800/30 dark:to-stone-800/30 rounded-2xl p-6 md:p-8 border border-slate-200 dark:border-neutral-700">
+              <h3 className="text-xl md:text-2xl font-semibold text-slate-900 dark:text-neutral-100 mb-4">
+                🚀 设计理念
+              </h3>
+              <p className="text-slate-600 dark:text-neutral-300 leading-relaxed">
+                我们坚信工具应该<strong>简单而强大</strong>。Copy as Markdown 不试图成为一个复杂的全能工具，
+                而是专注于做好一件事：<strong>让网页内容到 Markdown 的转换变得简单、精确、高效</strong>。
+                每一个功能的设计都围绕着真实的使用场景，让频繁进行 Markdown 写作的用户能够显著提升工作效率。
+              </p>
+            </div>
+
+            {/* Author */}
+            <div className="bg-white dark:bg-neutral-800/50 rounded-2xl p-6 md:p-8 border border-slate-200 dark:border-neutral-700">
+              <h3 className="text-xl md:text-2xl font-semibold text-slate-900 dark:text-neutral-100 mb-4">
+                👨‍💻 关于作者
+              </h3>
+              <div className="flex items-start space-x-4">
+                <div className="w-16 h-16 bg-gradient-to-br from-slate-200 to-gray-300 dark:from-neutral-600 dark:to-stone-600 rounded-full flex items-center justify-center flex-shrink-0">
+                  <span className="text-2xl font-bold text-slate-700 dark:text-neutral-200">子</span>
+                </div>
+                <div className="flex-1">
+                  <h4 className="font-semibold text-slate-900 dark:text-neutral-100 mb-2">子林</h4>
+                  <p className="text-slate-600 dark:text-neutral-300 leading-relaxed mb-3">
+                    一名热爱工具开发的程序员，专注于创建简单实用的生产力工具。
+                    相信好的工具应该让复杂的事情变得简单，让重复的工作变得高效。
+                  </p>
+                  <a 
+                    href="https://zilin.im?ref=copy-as-markdown" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center text-slate-600 hover:text-slate-900 dark:text-neutral-400 dark:hover:text-neutral-200 transition-colors text-sm"
+                  >
+                    <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                    </svg>
+                    访问个人网站：https://zilin.im
+                  </a>
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </section> */}
+      </section>
 
       {/* Footer */}
       <footer className="border-t border-slate-200 dark:border-neutral-700 bg-white dark:bg-neutral-900 py-6 px-4">
