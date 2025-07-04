@@ -166,33 +166,16 @@ export default function Home() {
           <div className="relative max-w-5xl mx-auto px-4">
             {/* Enhanced glow effect */}
             <div className="absolute inset-0 bg-gradient-to-r from-slate-400/30 via-gray-400/30 to-slate-400/30 dark:from-neutral-600/30 dark:via-stone-600/30 dark:to-neutral-600/30 rounded-3xl blur-2xl"></div>
+            
+            {/* Border container with gradient */}
             <div className="relative bg-gradient-to-r from-slate-600 via-gray-600 to-slate-600 dark:from-neutral-600 dark:via-stone-600 dark:to-neutral-600 p-[2px] rounded-3xl shadow-2xl">
-              <div className="bg-white dark:bg-neutral-900/95 backdrop-blur-sm rounded-3xl p-6 md:p-8 lg:p-10 border border-slate-200/50 dark:border-neutral-700/50">
-                <div className="aspect-video bg-gradient-to-br from-slate-50 via-white to-slate-100 dark:from-neutral-800 dark:via-stone-800 dark:to-neutral-700 rounded-xl flex items-center justify-center shadow-inner border border-slate-100 dark:border-neutral-700/50">
-                  <div className="text-center">
-                    <div className="w-16 h-16 md:w-20 md:h-20 bg-gradient-to-br from-slate-100 to-gray-200 dark:from-neutral-700/60 dark:to-stone-700/60 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg border border-slate-200 dark:border-neutral-600/50">
-                      <svg
-                        className="w-8 h-8 md:w-10 md:h-10 text-slate-600 dark:text-neutral-400"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"
-                        />
-                      </svg>
-                    </div>
-                    <p className="text-slate-600 dark:text-neutral-300 text-lg md:text-xl font-medium">
-                      插件演示截图
-                    </p>
-                    <p className="text-slate-500 dark:text-neutral-400 text-sm md:text-base mt-2">
-                      即将添加真实的插件使用截图
-                    </p>
-                  </div>
-                </div>
+              {/* Inner content container */}
+              <div className="relative bg-white dark:bg-neutral-900 rounded-[calc(1.5rem-2px)] overflow-hidden">
+                <img 
+                  src="/live/preview.png" 
+                  alt="Copy as Markdown 插件预览截图" 
+                  className="w-full h-auto block object-cover"
+                />
               </div>
             </div>
           </div>
